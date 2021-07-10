@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Fraud Recruitment Detector" name="konboot">
+
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='./assets/favicon.ico') }}">
+
+  <title>Components</title>  
+
+<link rel="stylesheet" type="text/css" href={{url_for('static', filename='./main.3f6952e4.css')}} /></head>
+
+<body class="">
+<div id="site-border-left"></div>
+<div id="site-border-right"></div>
+<div id="site-border-top"></div>
+<div id="site-border-bottom"></div>
+ <!-- Add your content of header -->
+<header>
+  <nav class="navbar  navbar-fixed-top navbar-default">
+    <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav ">
+          <li><a href="./index.html" title="">01 : Home</a></li>
+          <li><a href="./works.html" title="">02 : Works</a></li>
+          <li><a href="./about.html" title="">03 : About Us</a></li>
+          <li><a href="./contact.html" title="">04 : Contact</a></li>
+          <li><a href="./overview.html" title="">05 : Overview</a></li>
+        </ul>
+
+
+      </div> 
+    </div>
+  </nav>
+</header>
+
+<div class="section-container">
+  
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="left-header">
+        <h1>Fake Job Advertisement <br>Detection</h1>
+        <h2>Don’t be a victim of fake job offers</h2>
+      </div>
+      <div class="right-header">
+        <img src=".static/assets/FIGURES/Saly-11.png" alt="">
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="obj">
+      <h1>Introduction</h1>
+        <p><br>In this new era, there are many jobs advertisement display on many types of media like newspaper, poster even in social media. People with different types of education levels are searching for job through the advertisement. There are several bad people that want our data by creating fake job advertisement so the innocent people will give their data by applying the jobs. This will give a really bad consequences if the bad people will get our data. In this assignment, we are making analysis on what attribute will be the main cause of the job advertisement become fake and how can we predict the advertisement is fake.</p>
+    </div>
+
+    <div class="obj">
+      <h1><br>Objective</h1>
+      <ol>
+        <p><li>To make an analysis about fake job advertisement and detect the job advertisement is real or otherwise.</li></p>
+        <p><li>Find the best attribute for descriptive and predictive model.</li></p>
+        <p><li>To select what predictive model is better for this dataset.</li></p>
+      </ol>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="ml">
+      <h1>Descriptive Analysis</h1>
+    </div>
+
+    
+   
+
+    <!-- <section class="tabs">
+			<div class="option">
+				<div id="tab-1" class="tab-item tab-border">
+					<p class="hide-sm">Dataset Description</p>
+				</div>
+				<div id="tab-1" class="tab-item tab-border">
+					<p class="hide-sm">Descriptive Analysis</p>
+				</div>
+				<div id="tab-2" class="tab-item">
+					<p class="hide-sm">Predictive Analysis</p>
+				</div>
+			</div>
+    </section> -->
+    
+    <section class="tab-content">
+			<div class="option">
+
+				<!-- Tab Content 1 -->
+				<div id="tab-2-content" class="tab-content-item show">
+					<div class="tab-2-content-top">
+						<div>
+							<p class="text-lg">
+								In these part we will see how impactful is one attributes toward fraudulent. The first part is data cleansing as shown below.
+							</p>
+							<img src="./static/assets/FIGURES/1.png" />
+							<p class="text-dark">
+									<b><center><h3>Dataset</h3></center></b>
+							</p>
+						</div>
+
+						<div>
+							<img src="./static/assets/FIGURES/2.png" alt="" />
+							<p class="text-dark">
+									<b><center><h3>Fake Job Posting Table with attributes.</h3></center></b>
+							</p>
+						</div>
+
+						<div>
+              <p class="text-lg">
+                First we will separate data based on their percentage on missing value. If the missing value is higher than 50% we consider it as irrelevance data such as location and department so we remove it from the table. <br><br>
+                After that we will remove table that have description that cannot be used as nominal or binomial data. The data cannot be use because the difference between each data is very different and cannot be used as data. Such as job_id, title, salary_range, company_profile, description, requirement, benefits.<br><br>
+                Now all data has been clean we will now use PowerBI as our dashboard to visualize the fake job posting data.<br><br>
+              </p>
+              <center><img src="./static/assets/FIGURES/3.png" alt="" /></center>
+							<p class="text-dark">
+                	<b><center><h3>Data in Power BI</h3></center></b>
+							</p>
+              <p class="text-lg">
+                The data use is telecommuting, has_company_logo, has_questions, employment_type, required_experience, required_education, industry, function, fraudulent. <br><br>
+                Some of the attribute has missing value but not more than 50% of the whole data and the nominal is not very difference from each other.
+              </p>
+						</div>
+						
+					</div>
+
+					<div class="tab-2-content-bottom">
+
+            <div>
+							<center><img src="./static/assets/FIGURES/Figure_1.png" alt="" width="1000" /></center>
+							<p class="text-dark">
+								<b><center><h3>Donut chart show how much is fraudulent which is 1 consider as fraudulent</h3></center></b>
+              </p>
+              <p class="text-lg">
+                The chart show that there is about 870 fraudulent has been spotted.
+              </p>
+            </div>
+            <div>
+							<center><img src="./static/assets/FIGURES/Figure_3.png" alt="" width="1250"/><center>
+							<p class="text-dark">
+          
+                	<b><center><h3>Fraudulent based on function_of_employee bar chart</h3></center></b>
+              </p>
+              <p class="text-lg">
+                Based on this chart its show that Information Technology, Administrative and Customer service has more fraud jobs.
+              </p>
+            </div>
+
+            <div>
+							<center><img src="./static/assets/FIGURES/Figure_4.png" alt="" /></center>
+							<p class="text-dark">
+
+                	<b><center><h3>Fraudulent based on employment_type bar chart</h3></center></b>
+              </p>
+              <p class="text-lg">
+                Based on this chart its show that Full time, No description and part time is the top three cause of fraudulent.
+              </p>
+            </div>
+            <div>
+							<center><img src="./static/assets/FIGURES/6.png" alt="" /></center>
+							<p class="text-dark">
+               
+                <b><center><h3> Based on has_company_logo</h3></center></b>
+              </p>
+              <p class="text-lg">
+                The company with missing value has the highest fraudulent with Oil & Energy at 2nd place while Accounting at 3rd place.
+              </p>
+            </div>
+            <div>
+							<center><img src="./static/assets/FIGURES/Figure_2.png" alt="" width= "1000"/></center>
+							<p class="text-dark">
+               
+                <b><center><h3> Based on required_education using Funnel Chart</h3></center></b>
+              </p>
+              <p class="text-lg">
+                For required we use Funnel Chart that show that missing value still the most impactful and cause fraudulent as a job posting.
+              </p>
+            </div>
+            <div>
+							<center><img src="./static/assets/FIGURES/8.png" alt="" /></center>
+							<p class="text-dark">
+                
+                <b><center><h3>Based on required_experience using TreeMap</h3></center></b>
+              </p>
+              <p class="text-lg">
+                This show by using Treemap missing value still give the biggest impact in fraudulent with entry level and mid-senior level at 2nd and 3rd place.
+              </p>
+            </div>
+            <div>
+							<center><img src="./static/assets/FIGURES/9.png" alt="" /></center>
+							<p class="text-dark">
+                
+                <b><center><h3>Based on function using Treemap</h3></center></b>
+              </p>
+              <p class="text-lg">
+                The function also show missing value give the most fraudulent in a job posting with Administrative and engineering.
+              </p>
+            </div>
+					</div>
+
+					<div class="tab-2-content-top">
+						<div>
+							<p class="text-lg">
+								<br><br><br><br><b><h1>Conclusion</h1></b><br><br>
+								Based on our descriptive analysis it shows that missing value is a huge contribution to a fraudulent in a job posting. This make us consider it as a value when going into predictive analysis.<br><br>
+								We can conclude that if a job hunter want to search for company to work for make sure it have all description provided before accepting the job. 
+							</p>
+					</div>
+				</div>
+				
+		</section>
+		<div class="line"></div>
+
+    <div class="ml">
+      <h1>Predictive Analysis</h1>
+    </div>
+
+		
+    <section class="tab-content">
+			<div class="option">
+
+				<!-- Tab Content 1 -->
+				<div id="tab-2-content" class="tab-content-item show">
+					<div class="tab-2-content-top">
+						<div>
+							<p class="text-lg">
+								The first machine learning model is <b><u>Random Forest</u></b>
+							</p>
+							<img src="./static/assets/FIGURES/rfc.PNG" />
+							<img src="./static/assets/FIGURES/Figure_8.png" />
+							<p class="text-lg">
+								<br>The Random Forest model achieved a weighted avg accuracy score of 98%
+When compared to an unskilled model (that always picks 0) the RFC Classifier has area under curve as 0.962.
+The most important feature to inform this model was ‘has_company_logo’.
+Using a combination of ShuffleSplit and KFold Cross validation with below params achieved similar accuracy +- 1%: 
+
+							</p>
+						</div>
+
+						<div>
+							<p class="text-lg">
+								Now we test with <b><u>K Nearest Neighbour Classifier.</u></b>
+							</p>
+							<img src="./static/assets/FIGURES/knn.PNG" />
+							<img src="./static/assets/FIGURES/Figure_9.png" />
+							<p class="text-lg">
+								<br>The K Nearest Neighbors Classifier achieved a weighted avg accuracy score of 98%.
+When compared to an unskilled model (that always picks 0) the KNN Classifier has an AUC of 0.921 compared to the unskilled model at 0.50
+Unlike RFC KNN does not have a built-in way to identify the relative feK ature importance.
+For my model, I set the value of = 5, which was a good tradeoff of accuracy to execution time. As the K reduces, the predictions become less stable, but as K increases the execution time becomes extremely slow.
+
+							</p>
+						</div>
+
+						<div>
+							<p class="text-lg">
+								The last one is using the <b><u>Decision Tree.</u></b>.  
+							</p>
+							<img src="./static/assets/FIGURES/dt.PNG" />
+							<img src="./static/assets/FIGURES/Figure_10.png" />
+							<p class="text-lg">
+              <br>The Decision Tree Classifier achieved a weighted avg accuracy score of 98%.
+This model achieves a lower AUC of 0.81 (relative to the other ML classifiers) when compared to the 0 Classifier model AUC of 0.50.
+Decision Tree is performance is not better than Random Forest and K Nearest algorithm Classifier because of less AUC score. 
+
+								
+
+								<b><h1>Summary</h1></b><br><br>
+
+							<br>The ensemble learning methods (Random Forest) achieved the highest levels of classification accuracy of the several models I trained on this data set. I speculate this is because many of the original categorical features have some level of predictive power (as shown in the data visualization portion) and the features are relatively uncorrelated. Ensemble learning methods tends to work well for this type of data.
+K Neighbors Classifier also performed remarkably well on this data but had the longest execution times making it difficult to do extensive parameter tuning or experimentation.  However the fake and true job ads shared enough similarities in features that the KNN model was still able to perform well given this limitation.
+Decision Tree performed is good but not better than other two. Intuitively, we might think it would perform well due to relatively few features in the data set.
+<br><br>
+							</p>
+						</div>
+						
+					</div>
+
+				</div>
+				
+		</section>
+
+  </div>
+
+
+</body>
+    
+
+<footer class="footer-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>© 2021 | All Rights are reserved by Fraud Recuitment Detector </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     navActivePage();
+  });
+</script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-XXXXX-X', 'auto');
+  ga('send', 'pageview');
+</script>
+
+--> <script src={{url_for('static', filename='./main.70a66962.js')}}></script></body>
+
+</html>
